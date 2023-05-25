@@ -1,4 +1,3 @@
-from sqlalchemy import select
 from sqlalchemy.orm import Session
 from src.schemas.schemas import UserBase
 from src.infra.sqlalchemy.models import models
@@ -11,7 +10,7 @@ class RepositoryUser():
 
     def create_user(self, user: UserBase):
         db_user = models.User(username=user.username, email=user.email,
-                              cpf=user.cpf, password=user.password, laudos=user.laudos)
+                              cpf=user.cpf, password=user.password, laudos=user.laudos, role=user.role)
         self.session.add(db_user)
         self.session.commit()
         self.session.refresh(db_user)

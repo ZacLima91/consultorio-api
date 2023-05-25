@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.post("/user", status_code=status.HTTP_201_CREATED, response_model=UserBase)
 async def create_user(user: UserBase,session: Session = Depends(get_db)):
-    created_user = await RepositoryUser.create_user(user)
+    created_user = RepositoryUser(session).create_user(user)
     return created_user
 
 @router.get("/user", status_code=status.HTTP_200_OK, response_model=List[UserBase])

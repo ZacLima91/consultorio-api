@@ -9,9 +9,7 @@ class UserBase(BaseModel):
     cpf: str
     password: str
     laudos: Optional[List[str]] = None
-    role = bool = True
+    role: bool = True
 
     class Config:
         orm_mode = True
-
-
