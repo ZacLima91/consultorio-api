@@ -61,6 +61,13 @@ def get_user(logged_user: UserBase = Depends(logged_in)):
     return logged_user
 
 
+@router.get("/all", response_model=List[UserBase])
+def get_all(session: Session = Depends(get_db)):
+    repository_user = RepositoryUser(session)
+    users = repository_user.get_all_user()
+    return users
+
+
 @router.delete("/user", status_code=status.HTTP_200_OK, response_model=UserList)
 async def delete_user(user_id: int, session: Session = Depends(get_db), logged_user: UserList = Depends(logged_in)):
     if not logged_user.role:
