@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta
 from jose import jwt
-
+from typing import Union
 
 # CONFIG
 SECRET_KEY = 'Isaac92167497.'
@@ -9,7 +9,7 @@ ALGORITHM = 'HS256'
 EXPIRES_AT = 3000
 
 
-def create_access_token(data: dict, expires_delta: timedelta | None = None):
+def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
