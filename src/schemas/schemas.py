@@ -4,7 +4,6 @@ from typing import Optional, List
 
 class UserList(BaseModel):
     username: str
-    email: Optional[str]
     cpf: str
     laudos: Optional[List[str]] = None
     role: bool = True
@@ -16,7 +15,6 @@ class UserList(BaseModel):
 class UserBase(BaseModel):
     id: Optional[int] = None
     username: str
-    email: Optional[str]
     cpf: str
     password: str
     laudos: Optional[List[str]] = None

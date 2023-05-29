@@ -3,7 +3,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # SQLALCHEMY_DATABASE_URL = "sqlite:///./sql_app.db"
-SQLALCHEMY_DATABASE_URL = "postgresql://dbconsultorio_user:RSfee5S1DZGZUaLDmjMKHKjuALbegQ3D@dpg-chkk8vrhp8uej75kvt0g-a.oregon-postgres.render.com/dbconsultorio"
+SQLALCHEMY_DATABASE_URL = "postgresql://zac:xHuWbdbbIRhukNfujmI26AREKZ9BDpc8@dpg-chqgb1ik728ivvtkpdk0-a.oregon-postgres.render.com/dbconsultorio_iga9"
+
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL

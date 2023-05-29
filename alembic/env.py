@@ -1,7 +1,7 @@
+from logging.config import fileConfig
+
 from src.infra.sqlalchemy.config.database import Base
 from src.infra.sqlalchemy.models.models import *
-
-from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
@@ -45,7 +45,7 @@ def run_migrations_offline() -> None:
     context.configure(
         url=url,
         target_metadata=target_metadata,
-        render_as_batch=True,
+         render_as_batch=True,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
     )
